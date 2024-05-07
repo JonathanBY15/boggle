@@ -61,7 +61,7 @@ $(document).ready(function () {
         e.preventDefault(); // Prevent the default form submission behavior
 
         if (remainingTime > 0) { // Check if time limit is not yet reached
-            let guess = $input.val(); // Get the value of the guess input field
+            let guess = $input.val().toUpperCase(); // Get the value of the guess input field
 
             // Check if the guess is already submitted
             if (submittedWords.has(guess)) {

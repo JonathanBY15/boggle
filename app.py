@@ -24,10 +24,11 @@ def index():
     session['board'] = board
     return render_template('index.html', board=board, high_score=session.get("high_score", 0))
 
+
 @app.route('/guess', methods=['POST', 'GET'])
 def guess():
     """Check if guess is in dictionary and on board."""
-    guess = request.json['guess']
+    guess = request.json['guess'].upper()
 
     words = boggle_game.read_dict("words.txt")
 
@@ -41,7 +42,6 @@ def guess():
     else:
         return {"result": "not-word"}
 
-    return redirect('/')
 
 # track high score
 @app.route('/high-score', methods=['POST'])
@@ -56,6 +56,7 @@ def high_score():
     else:
         return jsonify(isHighScore=False)
     
+
 # view function to return the high score
 @app.route('/high-score', methods=['GET'])
 def get_high_score():
