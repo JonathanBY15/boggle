@@ -1,0 +1,35 @@
+body {
+    background-color: #ebc6c6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-family: "Freeman", sans-serif;
+    height: 100vh;
+}
+
+table {
+    border-collapse: collapse;
+    font-size: 2em;
+    background-color: #ecdbdb;
+}
+
+table,
+th,
+td {
+    border: 2px solid black;
+    text-align: center;
+}
+
+td {
+    width: 50px;
+    height: 50px;
+}
+
+input,
+button {
+    font-family: "Freeman", sans-serif;
+    font-size: 1em;
+    padding: 5px;
+}
